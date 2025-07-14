@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ri-Eat | Claim Reward</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-orange-50">
+    <div class="container mx-auto p-4 md:p-8 max-w-2xl">
+      <header class="text-center mb-8">
+        <a href="index.html">
+          <img
+            src="RIEAT_logo.jpg"
+            alt="Ri-Eat Logo"
+            class="w-32 h-32 mx-auto rounded-full mb-4 transition-transform hover:scale-105"
+          />
+        </a>
+        <h1 class="text-4xl font-bold text-orange-600">Claim Your Surprise!</h1>
+        <p class="text-gray-600">
+          Please provide your details to receive your reward.
+        </p>
+      </header>
+
+      <main id="claimContainer">
+        <form
+          id="reward-form"
+          class="bg-white p-8 rounded-2xl shadow-lg space-y-6"
+        >
+          <div class="mb-4">
+            <label for="name" class="block text-sm font-medium text-gray-700"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="phone" class="block text-sm font-medium text-gray-700"
+              >Phone Number</label
+            >
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              required
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="address" class="block text-sm font-medium text-gray-700"
+              >Delivery Address</label
+            >
+            <textarea
+              id="address"
+              name="address"
+              rows="3"
+              required
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+            ></textarea>
+          </div>
+          <div class="mb-4">
+            <label
+              for="experience"
+              class="block text-sm font-medium text-gray-700"
+              >Your Experience with Ri-Eat (Optional)</label
+            >
+            <textarea
+              id="experience"
+              name="experience"
+              rows="4"
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-orange-500 text-white p-3 rounded-lg hover:bg-orange-600 font-semibold"
+          >
+            Submit Claim
+          </button>
+        </form>
+      </main>
+
+      <footer class="text-center mt-8">
+        <p class="text-gray-500">&copy; 2024 Ri-Eat. All rights reserved.</p>
+      </footer>
+    </div>
+    <script src="claim.js"></script>
+  </body>
+</html>
