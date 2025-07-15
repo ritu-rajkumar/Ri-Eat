@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f97316" />
     <title>Ri-Eat Admin Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,9 +23,12 @@
         </div>
         <button
           id="darkModeToggle"
-          class="bg-white text-orange-500 dark:bg-gray-700 dark:text-yellow-400 px-4 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
+          class="theme-toggle"
+          aria-label="Toggle dark mode"
         >
-          🌙
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
         </button>
       </header>
 
