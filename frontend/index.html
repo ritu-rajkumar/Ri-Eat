@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ri-Eat | Customer Loyalty</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-orange-50">
-    <div class="container mx-auto p-4 md:p-8 max-w-lg">
+    <div class="relative container mx-auto p-4 md:p-8 max-w-lg">
       <header class="text-center mb-8">
         <img
           src="RIEAT_logo.jpg"
@@ -59,7 +60,7 @@
         <div class="text-center mt-8">
           <a
             href="feedback.html"
-            class="inline-block bg-white text-orange-600 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-orange-100 transition"
+            class="inline-block bg-white dark:bg-gray-800 text-orange-600 dark:text-orange-400 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-orange-100 dark:hover:bg-gray-700 transition"
           >
             💬 Got Feedback? Let Us Know!
           </a>
@@ -67,10 +68,12 @@
       </main>
 
       <footer class="text-center mt-8">
-        <p class="text-gray-500">&copy; 2024 Ri-Eat. All rights reserved.</p>
+        <p class="text-gray-500 dark:text-gray-400">&copy; 2024 Ri-Eat. All rights reserved.</p>
       </footer>
     </div>
 
+    <script src="theme.js"></script>
+    <script src="popup.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

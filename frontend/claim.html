@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ri-Eat | Claim Reward</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-orange-50">
-    <div class="container mx-auto p-4 md:p-8 max-w-2xl">
+    <div class="relative container mx-auto p-4 md:p-8 max-w-2xl">
       <header class="text-center mb-8">
         <a href="index.html">
           <img
@@ -36,7 +37,7 @@
               id="name"
               name="name"
               required
-              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
             />
           </div>
           <div class="mb-4">
@@ -48,7 +49,7 @@
               id="phone"
               name="phone"
               required
-              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
             />
           </div>
           <div class="mb-4">
@@ -60,7 +61,7 @@
               name="address"
               rows="3"
               required
-              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
             ></textarea>
           </div>
           <div class="mb-4">
@@ -73,7 +74,7 @@
               id="experience"
               name="experience"
               rows="4"
-              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
             ></textarea>
           </div>
           <button
@@ -86,9 +87,11 @@
       </main>
 
       <footer class="text-center mt-8">
-        <p class="text-gray-500">&copy; 2024 Ri-Eat. All rights reserved.</p>
+        <p class="text-gray-500 dark:text-gray-400">&copy; 2024 Ri-Eat. All rights reserved.</p>
       </footer>
     </div>
+    <script src="theme.js"></script>
+    <script src="popup.js"></script>
     <script src="claim.js"></script>
   </body>
 </html>

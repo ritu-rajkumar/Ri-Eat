@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ri-Eat | Feedback</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-orange-50">
-    <div class="container mx-auto p-4 md:p-8 max-w-2xl">
+    <div class="relative container mx-auto p-4 md:p-8 max-w-2xl">
       <header class="text-center mb-8">
         <a href="index.html">
           <img
@@ -35,7 +36,7 @@
               type="text"
               id="name"
               required
-              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
               placeholder="Your Name"
             />
           </div>
@@ -50,7 +51,7 @@
                 type="tel"
                 id="phone"
                 required
-                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="01234 56789"
               />
             </div>
@@ -63,7 +64,7 @@
               <input
                 type="text"
                 id="customerId"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="e.g., C004"
               />
             </div>
@@ -78,7 +79,7 @@
             <select
               id="menuItem"
               required
-              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
             >
               <option value="">Loading menu...</option>
             </select>
@@ -94,7 +95,7 @@
               id="feedbackText"
               rows="5"
               required
-              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
               placeholder="What did you like? What can we improve?"
             ></textarea>
           </div>
@@ -110,9 +111,11 @@
       </main>
 
       <footer class="text-center mt-8">
-        <p class="text-gray-500">&copy; 2024 Ri-Eat. All rights reserved.</p>
+        <p class="text-gray-500 dark:text-gray-400">&copy; 2024 Ri-Eat. All rights reserved.</p>
       </footer>
     </div>
+    <script src="theme.js"></script>
+    <script src="popup.js"></script>
     <script src="feedback.js"></script>
   </body>
 </html>

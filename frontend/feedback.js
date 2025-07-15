@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("feedbackForm");
-  const menuItemSelect = document.getElementById("menuItem");
   const submitBtn = document.getElementById("submitBtn");
+  const menuItemSelect = document.getElementById("menuItem");
+  const darkModeToggle = document.getElementById("darkModeToggle");
+
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", () => theme.toggle());
+  }
   const originalBtnText = submitBtn.textContent;
 
   async function populateMenuItems() {

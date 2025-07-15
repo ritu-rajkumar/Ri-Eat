@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!token) return;
 
     // Ask user for new password
-    const newPassword = prompt("Enter your new password (min 6 characters):");
+    const newPassword = await prompt("Enter your new password (min 6 characters):");
     if (!newPassword) return;
 
     try {
@@ -31,41 +31,23 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       const data = await res.json();
       if (!res.ok) {
-        alert(data.message || "Failed to reset password");
+        await alert(data.message || "Failed to reset password");
         return;
       }
-      alert(
+      await alert(
         "Password reset successful. You can now log in with your new password."
       );
       // Clean URL
       window.history.replaceState({}, document.title, window.location.pathname);
     } catch (err) {
-      alert("Server error. Please try again later.");
+      await alert("Server error. Please try again later.");
     }
   }
 
   // Invoke on load
   handleResetToken();
 
-  // --- Dark Mode ---
-  function setDarkMode(enabled) {
-    if (enabled) {
-      document.documentElement.classList.add("dark");
-      document.body.classList.add("dark");
-      localStorage.setItem("ri-eat-dark", "1");
-      darkModeToggle.textContent = "☀️";
-    } else {
-      document.documentElement.classList.remove("dark");
-      document.body.classList.remove("dark");
-      localStorage.setItem("ri-eat-dark", "0");
-      darkModeToggle.textContent = "🌙";
-    }
-  }
-  // On load
-  setDarkMode(localStorage.getItem("ri-eat-dark") === "1");
-  darkModeToggle.addEventListener("click", () => {
-    setDarkMode(!document.documentElement.classList.contains("dark"));
-  });
+  
 
   // --- Login Logic (real API) ---
   adminLoginForm.addEventListener("submit", async (e) => {
@@ -98,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (forgotLink) {
     forgotLink.addEventListener("click", async (e) => {
       e.preventDefault();
-      const username = prompt("Enter your admin username:");
+      const username = await prompt("Enter your admin username:");
       if (!username) return;
       try {
         const res = await fetch(
@@ -111,13 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         const data = await res.json();
         if (!res.ok) {
-          alert(data.message || "Error generating reset token");
+          await alert(data.message || "Error generating reset token");
           return;
         }
-        alert("A reset token has been sent to your registered email address.");
-        const token = prompt("Enter the reset token you received:");
+        await alert("A reset token has been sent to your registered email address.");
+        const token = await prompt("Enter the reset token you received:");
         if (!token) return;
-        const newPassword = prompt("Enter your new password:");
+        const newPassword = await prompt("Enter your new password:");
         if (!newPassword) return;
         const res2 = await fetch(
           "http://localhost:5000/api/admin/reset-password",
@@ -129,14 +111,14 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         const data2 = await res2.json();
         if (!res2.ok) {
-          alert(data2.message || "Failed to reset password");
+          await alert(data2.message || "Failed to reset password");
           return;
         }
-        alert(
+        await alert(
           "Password reset successful. You can now log in with your new password."
         );
       } catch (err) {
-        alert("Server error. Please try again later.");
+        await alert("Server error. Please try again later.");
       }
     });
   }
@@ -1005,7 +987,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function deleteOrder(id) {
-    if (!confirm("Delete this order?")) return;
+    if (! await confirm("Delete this order?")) return;
     const token = localStorage.getItem("ri-eat-admin-token");
     try {
       const res = await fetch(`http://localhost:5000/api/orders/${id}`, {
@@ -1273,7 +1255,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function completeClaim(id) {
     const token = localStorage.getItem("ri-eat-admin-token");
-    const nextTarget = prompt(
+    const nextTarget = await prompt(
       "Enter new target orders for customer (leave blank to keep current):"
     );
     try {

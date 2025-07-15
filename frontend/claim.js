@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("reward-form");
+  const darkModeToggle = document.getElementById("darkModeToggle");
+
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", () => theme.toggle());
+  }
   const claimContainer = document.getElementById("claimContainer");
   const params = new URLSearchParams(window.location.search);
   const customerId = params.get("customerId");

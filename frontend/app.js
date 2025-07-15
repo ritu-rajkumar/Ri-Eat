@@ -1,8 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const checkButton = document.getElementById("checkButton");
   const customerIdInput = document.getElementById("customerId");
+  const checkButton = document.getElementById("checkButton");
   const customerDataContainer = document.getElementById("customer-data");
   const claimFormContainer = document.getElementById("claim-form-container");
+  const darkModeToggle = document.getElementById("darkModeToggle");
+
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", () => theme.toggle());
+  }
   let currentCustomerId = "";
 
   checkButton.addEventListener("click", async () => {
