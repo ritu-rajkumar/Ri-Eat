@@ -32,10 +32,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       // Show the thank you message
       claimContainer.innerHTML = `
-            <div class="text-center p-8 bg-white rounded-2xl shadow-lg">
-                <h2 class="text-2xl font-bold text-green-600 mb-4">Thank You!</h2>
-                <p class="text-gray-700 mb-6">Your reward claim has been submitted successfully.</p>
-                <a href="index.html" class="inline-block bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 transition">Back to Home</a>
+            <div class="card text-center p-12 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 via-emerald-400 to-green-400 rounded-t-2xl"></div>
+                <div class="mb-6">
+                    <div class="w-20 h-20 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">Thank You!</h2>
+                    <p class="text-gray-700 dark:text-gray-300 text-lg mb-8">Your reward claim has been submitted successfully. We'll process it shortly!</p>
+                </div>
+                <a href="index.html" class="btn-primary inline-flex items-center gap-2 px-8 py-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to Home
+                </a>
             </div>
           `;
     } catch (err) {
