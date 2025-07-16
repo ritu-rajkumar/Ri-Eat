@@ -9,10 +9,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const logoutBtn = document.getElementById("logoutBtn");
   const forgotLink = document.getElementById("forgotLink");
   const darkModeToggle = document.getElementById("darkModeToggle");
+  const darkModeToggleMobile = document.getElementById("darkModeToggleMobile");
+  const hamburgerMenu = document.getElementById("hamburgerMenu");
+  const sidebar = document.getElementById("sidebar");
+  const sidebarMobileOverlay = document.getElementById("sidebarMobileOverlay");
 
   // Theme toggle
   if (darkModeToggle) {
     darkModeToggle.addEventListener("click", () => theme.toggle());
+  }
+  if (darkModeToggleMobile) {
+    darkModeToggleMobile.addEventListener("click", () => theme.toggle());
+  }
+
+  // Mobile sidebar functionality
+  if (hamburgerMenu && sidebar && sidebarMobileOverlay) {
+    hamburgerMenu.addEventListener("click", () => {
+      sidebar.classList.add("show");
+      sidebarMobileOverlay.classList.add("show");
+      document.body.style.overflow = "hidden";
+    });
+
+    sidebarMobileOverlay.addEventListener("click", () => {
+      sidebar.classList.remove("show");
+      sidebarMobileOverlay.classList.remove("show");
+      document.body.style.overflow = "";
+    });
+
+    // Close sidebar when clicking on a link (mobile)
+    const sidebarLinks = document.querySelectorAll(".sidebar-link");
+    sidebarLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          sidebar.classList.remove("show");
+          sidebarMobileOverlay.classList.remove("show");
+          document.body.style.overflow = "";
+        }
+      });
+    });
   }
 
   // Check for existing token
